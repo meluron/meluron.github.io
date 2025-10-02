@@ -120,9 +120,10 @@
             transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
             min-width: 260px;
             max-width: 260px;
-            aspect-ratio: 1;
+            height: 300px;
             flex-shrink: 0;
             scroll-snap-align: start;
         }
@@ -135,7 +136,7 @@
 
         .product-header {
             text-align: center;
-            margin-bottom: 1.25rem;
+            margin-bottom: 1rem;
         }
 
         .product-icon {
@@ -148,6 +149,9 @@
 
         .product-info {
             flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
         }
 
         .product-name {
@@ -160,9 +164,13 @@
         .product-desc {
             color: #94a3b8;
             font-size: 0.875rem;
-            line-height: 1.6;
+            line-height: 1.5;
             text-align: center;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
         }
 
         .product-links {
@@ -242,20 +250,26 @@
             .product {
                 min-width: 220px;
                 max-width: 220px;
-                padding: 1.5rem;
+                height: 280px;
+                padding: 1.25rem;
             }
 
             .product-icon {
-                width: 64px;
-                height: 64px;
+                width: 56px;
+                height: 56px;
+                margin-bottom: 0.75rem;
             }
 
             .product-name {
-                font-size: 1.125rem;
+                font-size: 1rem;
+                margin-bottom: 0.375rem;
             }
 
             .product-desc {
-                font-size: 0.8125rem;
+                font-size: 0.75rem;
+                line-height: 1.4;
+                margin-bottom: 0.75rem;
+                -webkit-line-clamp: 3;
             }
 
             .btn {
@@ -284,7 +298,7 @@
                 name: 'toolbox',
                 icon: 'https://raw.githubusercontent.com/meluron/assets/refs/heads/main/logos/meluron-toolbox/icon.png',
                 url: 'https://github.com/meluron-toolbox',
-                description: 'A growing collection of handy tools. Explore, experiment, and enjoy!',
+                description: 'Essential Python utilities for audio and video processing',
                 products: [
                     {
                         name: 'modusa',
@@ -308,7 +322,7 @@
                 name: 'codecafe',
                 icon: 'https://raw.githubusercontent.com/meluron/assets/refs/heads/main/logos/meluron-codecafe/icon.png',
                 url: 'https://github.com/meluron-codecafe',
-                description: 'An evolving collection of hands-on tutorials and creative coding projects across diverse programming domains.',
+                description: 'Interactive learning resources for developers',
                 products: [
                     {
                         name: 'devquest',
