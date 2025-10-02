@@ -27,6 +27,7 @@
 
         header {
             text-align: center;
+            margin-bottom: 1.5rem;
         }
 
         .logo {
@@ -81,9 +82,32 @@
         }
 
         .products {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            display: flex;
             gap: 1.25rem;
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding-bottom: 1rem;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(251, 146, 60, 0.3) rgba(15, 23, 42, 0.5);
+        }
+
+        .products::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .products::-webkit-scrollbar-track {
+            background: rgba(15, 23, 42, 0.5);
+            border-radius: 4px;
+        }
+
+        .products::-webkit-scrollbar-thumb {
+            background: rgba(251, 146, 60, 0.3);
+            border-radius: 4px;
+        }
+
+        .products::-webkit-scrollbar-thumb:hover {
+            background: rgba(251, 146, 60, 0.5);
         }
 
         .product {
@@ -94,7 +118,11 @@
             transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
-            height: 100%;
+            min-width: 260px;
+            max-width: 260px;
+            aspect-ratio: 1;
+            flex-shrink: 0;
+            scroll-snap-align: start;
         }
 
         .product:hover {
@@ -109,8 +137,8 @@
         }
 
         .product-icon {
-            width: 100px;
-            height: 100px;
+            width: 80px;
+            height: 80px;
             margin: 0 auto 1rem;
             display: block;
             object-fit: contain;
@@ -206,7 +234,7 @@
                 name: 'toolbox',
                 icon: 'https://raw.githubusercontent.com/meluron/assets/refs/heads/main/logos/meluron-toolbox/icon.png',
                 url: 'https://github.com/meluron-toolbox',
-                description: 'Essential Python utilities for audio and video processing',
+                description: 'A growing collection of handy tools. Explore, experiment, and enjoy!',
                 products: [
                     {
                         name: 'modusa',
@@ -230,7 +258,7 @@
                 name: 'codecafe',
                 icon: 'https://raw.githubusercontent.com/meluron/assets/refs/heads/main/logos/meluron-codecafe/icon.png',
                 url: 'https://github.com/meluron-codecafe',
-                description: 'Interactive learning resources for developers',
+                description: 'An evolving collection of hands-on tutorials and creative coding projects across diverse programming domains.',
                 products: [
                     {
                         name: 'devquest',
