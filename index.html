@@ -278,9 +278,9 @@
 </head>
 <body>
     <div class="container">
-        <header>
+        <header style="display: flex; flex-direction: column; align-items: center; text-align: center;">
             <img class="logo" src="https://raw.githubusercontent.com/meluron/assets/refs/heads/main/logos/meluron/icon.png" alt="meluron">
-            <p style="color: #64748b; font-size: 0.875rem;">Building Audio Products.</p>
+            <p style="color: #64748b; font-size: 0.875rem; margin-top: 0.0rem;">Building Audio Products.</p>
         </header>
 
         <main id="main-content"></main>
@@ -293,10 +293,6 @@
     <script>
         const sections = [
             {
-                name: 'toolbox',
-                icon: 'https://raw.githubusercontent.com/meluron/assets/refs/heads/main/logos/meluron-toolbox/icon.png',
-                url: 'https://github.com/meluron-toolbox',
-                description: 'A collection of utility tools.',
                 products: [
                     {
                         name: 'modusa',
@@ -307,22 +303,6 @@
                         issues: 'https://github.com/meluron-toolbox/modusa/issues/new'
                     },
                     {
-                        name: 'movid',
-                        icon: 'https://raw.githubusercontent.com/meluron/assets/refs/heads/main/logos/meluron-toolbox/movid/icon.png',
-                        description: 'A python library with utility tools designed to generate videos.',
-                        website: 'https://meluron-toolbox.github.io/movid/',
-                        github: 'https://github.com/meluron-toolbox/movid',
-                        issues: 'https://github.com/meluron-toolbox/movid/issues/new'
-                    }
-                ]
-            },
-            {
-                name: 'codecafe',
-                icon: 'https://raw.githubusercontent.com/meluron/assets/refs/heads/main/logos/meluron-codecafe/icon.png',
-                url: 'https://github.com/meluron-codecafe',
-                description: 'A collection of learning resources.',
-                products: [
-                    {
                         name: 'devquest',
                         icon: 'https://raw.githubusercontent.com/meluron/assets/refs/heads/main/logos/meluron-codecafe/devquest/icon.png',
                         description: 'A platform that implements research papers in Python and explains the concepts behind them, helping learners understand ideas in context.',
@@ -331,7 +311,7 @@
                         issues: 'https://github.com/meluron-codecafe/DevQuest/issues/new'
                     }
                 ]
-            }
+            },
         ];
 
         const icons = {
@@ -348,13 +328,6 @@
                 sectionDiv.className = 'section';
                 
                 sectionDiv.innerHTML = `
-                    <div class="section-header">
-                        <div class="section-title">
-                            <img src="${section.icon}" alt="${section.name}">
-                            <a href="${section.url}" target="_blank">${section.name}</a>
-                        </div>
-                        <div class="section-desc">${section.description}</div>
-                    </div>
                     <div class="products">
                         ${section.products.map(product => `
                             <div class="product">
